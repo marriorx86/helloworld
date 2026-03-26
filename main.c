@@ -1,6 +1,9 @@
 #include <stdio.h>
 
+extern const char* return_hello(void);
+
 int main(void){
-  fprintf(stdout, "Hello, World\n");
+  const unsigned char *const restrict s = (const unsigned char *const)return_hello();
+  printf("%s\n", s);
   return 0;
 }
